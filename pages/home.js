@@ -1,6 +1,6 @@
 import { useFeaturedImages } from "./api/featured";
 import { useSearchContext } from "@/context/SearchContext";
-import { useState} from "react";
+import { useState } from "react";
 import { Photos } from "@/components";
 
 const Home = () => {
@@ -9,28 +9,38 @@ const Home = () => {
 
   const featuredImages = useFeaturedImages(); // Get the random images
 
-
-
   return (
     <>
       <section className="py-16">
         <div className="styled_container">
-          {((searchResult && searchResult.length > 0) ||
-            featuredImages.length > 0) && (
+          {searchResult && searchResult.length > 0 ? (
             <div className="image_container">
-              {(searchResult.length > 0 ? searchResult : featuredImages).map(
-                (image, index) => (
-                  <Photos
-                    src={image.src.large}
-                    alt={image.photographer}
-                    isHovered={isHovered}
-                    setHovered={setHovered}
-                    index={index}
-                    key={index}
-                  />
-                )
-              )}
+              {searchResult.map((image, index) => (
+                <Photos
+                  src={image.src.large}
+                  alt={image.photographer}
+                  isHovered={isHovered}
+                  setHovered={setHovered}
+                  index={index}
+                  key={index}
+                />
+              ))}
             </div>
+          ) : featuredImages.length > 0 ? (
+            <div className="image_container">
+              {featuredImages.map((image, index) => (
+                <Photos
+                  src={image.src.large}
+                  alt={image.photographer}
+                  isHovered={isHovered}
+                  setHovered={setHovered}
+                  index={index}
+                  key={index}
+                />
+              ))}
+            </div>
+          ) : (
+            <div>No search results available</div>
           )}
 
           {searchResult && searchResult.length > 0 && (
