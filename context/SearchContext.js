@@ -81,6 +81,12 @@ const SearchProvider = ({ children }) => {
       setSearching(false);
     }
   };
+  useEffect(() => {
+    // Perform the initial search when the component mounts
+    if (searchText.trim() !== "") {
+      handleSearch();
+    }
+  }, []);
 
   useEffect(() => {
     // Check if "Enter" key was pressed
