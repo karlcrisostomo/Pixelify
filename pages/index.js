@@ -8,8 +8,8 @@ const index = () => {
     <>
       <main className="main">
         <SearchProvider>
-        <SearchBar />
-          <Category/>
+          <SearchBar />
+          <Category />
           <Home />
         </SearchProvider>
       </main>
