@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Photos } from "@/components";
 
 const Home = () => {
-  const { values } = useSearchContext();
+  const { searchResult,handleLoadMore } = useSearchContext().values;
   const [isHovered, setHovered] = useState(null);
 
   const featuredImages = useFeaturedImages(); // Get the random images
@@ -13,10 +13,10 @@ const Home = () => {
     <>
       <section className=" py-16">
         <div className="styled_container">
-          {(values.searchResult.length > 0 || featuredImages.length > 0) && (
+          {(searchResult.length > 0 || featuredImages.length > 0) && (
             <div className="image_container">
-              {(values.searchResult.length > 0
-                ? values.searchResult
+              {(searchResult.length > 0
+                ? searchResult
                 : featuredImages
               ).map((image, index) => (
                 <Photos
@@ -31,11 +31,11 @@ const Home = () => {
             </div>
           )}
 
-          {values.searchResult.length > 0 && (
+          {searchResult.length > 0 && (
             <div className="flex justify-center mt-12">
               <button
                 className="  font-medium dark:bg-gray-900  hover:-translate-y-1 hover:-translate-x-1  hover:shadow-xl hover:shadow-gray-600 tracking-wider transition-all hover:scale-105 hover:font-bold  text-white p-4 rounded-lg"
-                onClick={() => values.handleLoadMore()}
+                onClick={() => handleLoadMore()}
               >
                 Load More
               </button>
