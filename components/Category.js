@@ -9,7 +9,7 @@ const Category = () => {
     { id: 5, query: "Skyscrapers" },
   ];
 
-  const { setSearchText } = useSearchContext().values;
+  const { setSearchText } = useSearchContext();
 
   const handleCategoryClick = (selectedCategoryText) => {
     setSearchText(selectedCategoryText); // Set the category

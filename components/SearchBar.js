@@ -2,7 +2,14 @@ import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { useSearchContext } from "@/context/SearchContext";
 
 const SearchBar = () => {
-  const { values } = useSearchContext();
+  const {
+    searchText,
+    searching,
+    handleSearch,
+    handleChange,
+    handleChangesearching,
+    handleRemove,
+  } = useSearchContext();
 
   return (
     <section>
@@ -12,9 +19,9 @@ const SearchBar = () => {
             <AiOutlineSearch
               size={22}
               onClick={() => {
-                if (!values.searching) {
+                if (!searching) {
                   // Only trigger search if not currently searching
-                  values.handleSearch();
+                  handleSearch();
                 }
               }}
             />
@@ -22,15 +29,15 @@ const SearchBar = () => {
 
           <input
             type="text"
-            value={values.searchText}
-            onChange={values.handleChange}
-            disabled={values.handleChangesearching} // Disable input while searching
+            value={searchText}
+            onChange={handleChange}
+            disabled={handleChangesearching} // Disable input while searching
           />
 
           <span className="search_remove">
-            {values.searchText && !values.searching && (
+            {searchText && !searching && (
               // Display close icon only if not currently searching
-              <AiOutlineClose size={22} onClick={values.handleRemove} />
+              <AiOutlineClose size={22} onClick={handleRemove} />
             )}
           </span>
         </div>

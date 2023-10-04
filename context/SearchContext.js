@@ -99,24 +99,24 @@ const SearchProvider = ({ children }) => {
     };
   }, [searchText]);
 
-  const values = {
-    searchText,
-    setSearchText,
-    searchResult,
-    setSearchResult,
-    handleChange,
-    handleSearch,
-    handleRemove,
-    searching, 
-    category,
-    setCategory,
-    numImages,
-    handleLoadMore,
-    isLoading,
-  };
-
   return (
-    <SearchContext.Provider value={{ values }}>
+    <SearchContext.Provider
+      value={{
+        searchText,
+        setSearchText,
+        searchResult,
+        setSearchResult,
+        handleChange,
+        handleSearch,
+        handleRemove,
+        searching,
+        category,
+        setCategory,
+        numImages,
+        handleLoadMore,
+        isLoading,
+      }}
+    >
       {children}
     </SearchContext.Provider>
   );

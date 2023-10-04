@@ -6,7 +6,7 @@ import Loader from "./Loader";
 
 const Photos = ({ src, alt, index, isHovered, setHovered }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const { values } = useSearchContext();
+  const { isLoading } = useSearchContext();
   const togglePic = () => {
     setIsPopupOpen((toggle) => !toggle);
   };
@@ -37,7 +37,7 @@ const Photos = ({ src, alt, index, isHovered, setHovered }) => {
   return (
     <div>
       <div onClick={togglePic}>
-        {values.isLoading ? (
+        {isLoading ? (
           <Loader />
         ) : (
           <Image
