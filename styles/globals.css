@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.styled_app {
+  @apply p-4;
+}
+.main {
+  @apply z-50 relative mt-24;
+}
+
+.main_bg {
+  @apply bg-[url('/pixelify_bg.jpg')]  z-0 top-0 bottom-0 h-[500px] bg-cover absolute bg-no-repeat bg-center   w-full;
+}
+.styled_container {
+  @apply container mx-auto;
+}
+
+.searchbar_container {
+  @apply lg:max-w-lg mx-auto py-16;
+}
+.styled_searchbar {
+  @apply bg-white rounded-lg shadow-lg flex items-center py-5 px-4 max-md:max-w-xs mx-auto;
+}
+
+.styled_searchbar input {
+  @apply outline-none bg-transparent w-full;
+}
+
+.styled_search {
+  @apply mr-2 cursor-pointer hover:text-blue-600 transition-all duration-300  hover:scale-[90%];
+}
+.search_remove {
+  @apply px-2  cursor-pointer hover:text-red-600 transition-all duration-300  hover:scale-[90%];
+}
+
+
+.image_container {
+  @apply  max-sm:columns-2 columns-3   ;  
+}
+
+.image_item {
+  @apply w-full h-full  mb-7 cursor-zoom-in  hover:contrast-[.7] transition-all duration-300;
+}
+
+.image_Popup {
+  @apply max-md:py-32 fixed top-0 py-28 px-12 z-[9999999] bg-black/20 w-full backdrop-blur-sm left-0 h-screen;
+}
+
+.image_hovered {
+  @apply dark:bg-gray-900 cursor-none backdrop-blur-md text-white text-center  max-sm:text-sm py-6 text-sm tracking-wider absolute -translate-y-40 px-6 rounded-lg;
+}
+
+.styled_dl_btn {
+  @apply bg-blue-600 p-4   mt-12  rounded-lg text-white font-bold   hover:-translate-y-1 hover:-translate-x-1 transition-all;
+}

@@ -1,0 +1,7 @@
+export {default as Navigation} from "./Navigation"
+export {default as SearchBar} from "./SearchBar"
+export {default as Logo} from "./Logo"
+export {default as Category} from "./Category"
+export {default as Photos} from "./Photos"
+export {default as Footer } from "./Footer.js"
+export {default as Loader } from "./Loader.js"
