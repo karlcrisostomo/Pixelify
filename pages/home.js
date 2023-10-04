@@ -13,7 +13,7 @@ const Home = () => {
     <>
       <section className="py-16">
         <div className="styled_container">
-          {searchResult && searchResult.length > 0 ? (
+          {searchResult?.length && searchResult.length > 0 ? (
             <div className="image_container">
               {searchResult.map((image, index) => (
                 <Photos
@@ -43,7 +43,7 @@ const Home = () => {
             <div>No search results available</div>
           )}
 
-          {searchResult && searchResult.length > 0 && (
+          {searchResult?.length > 0 && (
             <div className="flex justify-center mt-12">
               <button
                 className="font-medium dark:bg-gray-900 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-xl hover:shadow-gray-600 tracking-wider transition-all hover:scale-105 hover:font-bold text-white p-4 rounded-lg"
