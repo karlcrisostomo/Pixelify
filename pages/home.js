@@ -1,6 +1,6 @@
 import { useFeaturedImages } from "./api/featured";
 import { useSearchContext } from "@/context/SearchContext";
-import { useState } from "react";
+import { useState} from "react";
 import { Photos } from "@/components";
 
 const Home = () => {
@@ -8,6 +8,8 @@ const Home = () => {
   const [isHovered, setHovered] = useState(null);
 
   const featuredImages = useFeaturedImages(); // Get the random images
+
+
 
   return (
     <>

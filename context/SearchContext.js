@@ -1,5 +1,7 @@
+import React, { useEffect } from "react";
 import { fetchDataFromPexels } from "@/pages/api/pexelsAPI";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
+
 const SearchContext = createContext();
 
 export const useSearchContext = () => {
@@ -11,7 +13,7 @@ const SearchProvider = ({ children }) => {
   const [searchResult, setSearchResult] = useState([]);
   const [searching, setSearching] = useState(false); // Track whether a search is in progress
   const [category, setCategory] = useState("");
-  const [numImages, setNumImages] = useState(11); //initial data
+  const [numImages, setNumImages] = useState(11); // Initial data
   const [isLoading, setLoading] = useState(false);
 
   // save the data to local
@@ -71,7 +73,7 @@ const SearchProvider = ({ children }) => {
       const response = await fetchDataFromPexels(searchText, newNumImages); // Fetch more images
 
       if (response) {
-        setSearchResult(response || []);
+        setSearchResult(response);
       }
       setLoading(false);
     } catch (error) {
@@ -81,12 +83,6 @@ const SearchProvider = ({ children }) => {
       setSearching(false);
     }
   };
-  useEffect(() => {
-    // Perform the initial search when the component mounts
-    if (searchText.trim() !== "") {
-      handleSearch();
-    }
-  }, []);
 
   useEffect(() => {
     // Check if "Enter" key was pressed
