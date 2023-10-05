@@ -34,9 +34,8 @@
   @apply px-2  cursor-pointer hover:text-red-600 transition-all duration-300  hover:scale-[90%];
 }
 
-
 .image_container {
-  @apply  max-sm:columns-2 columns-3  gap-6   ;  
+  @apply max-sm:columns-2 columns-3  gap-6;
 }
 
 .image_item {

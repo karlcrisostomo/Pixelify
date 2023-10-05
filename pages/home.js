@@ -49,7 +49,7 @@ const Home = () => {
                   ))}
             </div>
           ) : (
-            <div>No search results available</div>
+            <div className=" text-center font-bold text-lg h-screen flex flex-col items-center">No search results available</div>
           )}
 
           {searchResultsExist && (

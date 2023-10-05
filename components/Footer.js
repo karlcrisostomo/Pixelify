@@ -3,7 +3,7 @@ import { RxGithubLogo } from "react-icons/rx";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <div className=" py-8 px-5  dark:bg-gray-900 text-white    ">
+    <div className=" py-8  px-5  dark:bg-gray-900 text-white    ">
       <div className=" container mx-auto flex sm:justify-between sm:items-center md:px-4 max-sm:flex-col text-sm pt-6 sm:flex-row h-[5em] ">
         <h1 className=" flex items-center font-medium">
           © {currentYear} - Pixelify
