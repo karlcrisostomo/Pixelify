@@ -12,10 +12,7 @@ const Category = () => {
   const { setSearchText } = useSearchContext();
 
   const handleCategoryClick = (selectedCategoryText) => {
-    setSearchText(selectedCategoryText); // Set the category
-
-    // Use an arrow function to wrap the function call to handleCategoryClick
-    // This ensures that it's only executed when the click event occurs
+    setSearchText(selectedCategoryText);
   };
 
   return (

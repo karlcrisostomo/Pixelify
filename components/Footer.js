@@ -13,7 +13,7 @@ const Footer = () => {
           Design and Coded by
           <span className=" ml-1 font-medium">Karl_Crisostomo</span>
           <a
-            href="https://github.com/karlcrisostomo/Book-Findr.git"
+            href="https://github.com/karlcrisostomo/Pixelify"
             target="_blank"
             rel="noopener noreferrer"
           >
