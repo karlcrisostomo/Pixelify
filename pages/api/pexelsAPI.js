@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiKey = "F1FRHPIND3qywCwQFE13iJENd2Fb46hrgyHBauftCaH0e1HbVSkZtM0w";
+const apiKey = "SxVwj36R9BsWY0Lr82ZobidJmQShxScnA3G8nA6UNjYgI6Op45xnE6k6";
 
 export const fetchDataFromPexels = async (query, item) => {
   try {
